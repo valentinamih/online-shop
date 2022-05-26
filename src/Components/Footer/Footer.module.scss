@@ -1,0 +1,36 @@
+@import './../../styles/colors';
+
+.footerContainer {
+  display: grid;
+  grid-area: f;
+  min-height: 250px;
+  background-color: $black;
+  color: white;
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  margin: 0 auto;
+  width: 80%;
+}
+
+.footerLogo {
+  justify-self: start;
+  span {
+    color: $gray;
+    font-size: 12px;
+  }
+  a {
+    color: $orange;
+    text-decoration: none;
+  }
+  h1 {
+    margin-bottom: 5px;
+  }
+}
+
+.footerNavigation {
+  justify-self: end;
+}

@@ -1,0 +1,16 @@
+@import "../../../src/styles/colors";
+
+.sidebar {
+    display: grid;
+    justify-items: stretch;
+    grid-template-rows: fit-content(100%) 55px 55px 1fr;
+    gap: 15px;
+    grid-area: s;
+    min-width: 200px;
+    max-width: 200px;
+    button {
+        margin: 0 20px;
+        font-size: 19px;
+    }
+}
+

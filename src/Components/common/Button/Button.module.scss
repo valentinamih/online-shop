@@ -1,0 +1,13 @@
+@import "./../../../styles/colors";
+
+.button {
+  background-color: $orange;
+  border: none;
+  max-height: 80px;
+  color: white;
+  &:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+  }
+}

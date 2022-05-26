@@ -1,0 +1,14 @@
+@import './../../../styles/colors';
+
+.price {
+  line-height: 50px;
+  margin: 0;
+  &::before {
+    width: 70px;
+    height: 3px;
+    position: absolute;
+    background-color: #fbb710;
+    z-index: 10;
+    content: '';
+  }
+}

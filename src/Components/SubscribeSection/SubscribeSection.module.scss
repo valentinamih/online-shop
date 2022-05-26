@@ -1,0 +1,58 @@
+@import "./../../styles/colors";
+
+@media (min-width: 900px) {
+  .subscribeSection {
+    grid-template-columns: 1fr 1fr;
+  }
+  .subscribeSection {
+    width: 80%;
+  }
+  .subscribeForm {
+    width: 85%;
+    justify-self: end;
+  }
+}
+
+@media (max-width: 900px) {
+  .subscribeSection {
+    grid-template-rows: 1fr 1fr;
+  }
+  .subscribeSection {
+    width: 80%;
+  }
+}
+
+.subscribeSectionContainer {
+  display: grid;
+  align-items: center;
+  grid-area: ss;
+  background-color: $dark-gray;
+  min-height: 250px;
+}
+
+.subscribeSection {
+  display: grid;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.subscribeHeader {
+  font-size: 30px;
+  color: white;
+  margin-bottom: 10px;
+
+  span {
+    color: $orange;
+  }
+}
+
+
+.subscribeForm {
+  font-size: 19px;
+}
+
+.subscribeDescription {
+  color: $gray;
+  line-height: 25px;
+}
+
