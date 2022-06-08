@@ -1,0 +1,16 @@
+@import "./../../../../styles/colors";
+
+.categoriesContainer {
+  margin: 40px 0;
+}
+
+.categoryItem {
+  color: $gray;
+  cursor: pointer;
+  &:hover {
+    color: $orange;
+  }
+}
+.active {
+  color: $orange;
+}

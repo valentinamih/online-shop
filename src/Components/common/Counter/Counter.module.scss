@@ -2,8 +2,8 @@
 
 .countArrow {
   cursor: pointer;
-  width:20px;
-  text-align:center;
+  width: 20px;
+  text-align: center;
   font-size: 10px;
 }
 
@@ -11,10 +11,10 @@
   display: grid;
   align-items: center;
 }
-.count{
+.count {
   width: 50px;
-  text-align:center;
-  border:none;
+  text-align: center;
+  border: none;
   background-color: $light-gray;
   color: $gray;
 }

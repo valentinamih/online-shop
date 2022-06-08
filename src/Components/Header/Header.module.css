@@ -1,0 +1,10 @@
+.header {
+  display: grid;
+  justify-content: center;
+  grid-area: h;
+  margin: 40px 20px 40px 20px;
+  border: solid 5px #ffc107;
+  border-radius: 50%;
+}
+
+/*# sourceMappingURL=Header.module.css.map */

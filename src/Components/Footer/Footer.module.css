@@ -1,0 +1,36 @@
+.footerContainer {
+  display: grid;
+  grid-area: f;
+  min-height: 250px;
+  background-color: #252525;
+  color: white;
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  margin: 0 auto;
+  width: 80%;
+}
+
+.footerLogo {
+  justify-self: start;
+}
+.footerLogo span {
+  color: #b3b1b1;
+  font-size: 12px;
+}
+.footerLogo a {
+  color: #ffc107;
+  text-decoration: none;
+}
+.footerLogo h1 {
+  margin-bottom: 5px;
+}
+
+.footerNavigation {
+  justify-self: end;
+}
+
+/*# sourceMappingURL=Footer.module.css.map */

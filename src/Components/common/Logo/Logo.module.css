@@ -1,0 +1,14 @@
+.logoImage {
+  display: inline-block;
+  margin-right: 5px;
+  width: 20px;
+  height: 20px;
+  background-color: #ffc107;
+  border-radius: 50%;
+}
+
+.logo {
+  letter-spacing: 5px;
+}
+
+/*# sourceMappingURL=Logo.module.css.map */

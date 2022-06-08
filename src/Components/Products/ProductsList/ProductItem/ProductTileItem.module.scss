@@ -1,0 +1,34 @@
+.productItem {
+  display: grid;
+  grid-template-areas: "i i" "l r";
+  margin: 5px 0;
+  width: 100%;
+  height: fit-content;
+}
+
+.productItemImage {
+  grid-area: i;
+  display: block;
+  margin-bottom: 20px;
+  width: 100%;
+  height: 400px;
+}
+
+.itemOptions {
+  display: grid;
+  justify-items: end;
+  justify-self: end;
+}
+
+.cartIcon {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  &:hover {
+    filter: invert(50%);
+  }
+  &:active {
+    filter: invert(70%);
+  }
+}
+

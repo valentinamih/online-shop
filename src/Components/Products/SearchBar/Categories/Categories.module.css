@@ -1,0 +1,17 @@
+.categoriesContainer {
+  margin: 40px 0;
+}
+
+.categoryItem {
+  color: #b3b1b1;
+  cursor: pointer;
+}
+.categoryItem:hover {
+  color: #ffc107;
+}
+
+.active {
+  color: #ffc107;
+}
+
+/*# sourceMappingURL=Categories.module.css.map */

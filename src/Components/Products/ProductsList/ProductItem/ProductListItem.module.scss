@@ -1,0 +1,44 @@
+@import "./../../../../styles/colors";
+
+.productItem {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  margin-top: 20px;
+  width: 100%;
+  border: 1px solid $light-gray;
+}
+
+.productItemImage {
+  margin-right: 10px;
+  height: 200px;
+  width: 200px;
+}
+
+.name {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 30px;
+}
+
+.itemOptions {
+  display: grid;
+  margin: 5px;
+  justify-items: end;
+}
+
+.cartIcon {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+
+  &:hover {
+    filter: invert(50%);
+  }
+  &:active {
+    filter: invert(70%);
+  }
+}
+
+.cartIconContainer {
+  align-self: end;
+}

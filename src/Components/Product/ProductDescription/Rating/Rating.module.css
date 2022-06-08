@@ -1,0 +1,43 @@
+@charset "UTF-8";
+.ratingArea {
+  width: 80px;
+}
+
+.ratingArea:not(:checked) > input {
+  display: none;
+}
+
+.ratingArea:not(:checked) > label {
+  float: right;
+  width: 15px;
+  cursor: pointer;
+  font-size: 15px;
+  line-height: 32px;
+  color: #b3b1b1;
+  text-shadow: 1px 1px #bbb;
+}
+
+.ratingArea:not(:checked) > label:before {
+  content: "★";
+}
+
+.ratingArea > input:checked ~ label {
+  color: #ffc107;
+  text-shadow: 1px 1px #c60;
+}
+
+.ratingArea:not(:checked) > label:hover,
+.ratingArea:not(:checked) > label:hover ~ label {
+  color: #ffc107;
+}
+
+.ratingArea > input:checked + label:hover,
+.ratingArea > input:checked + label:hover ~ label,
+.ratingArea > input:checked ~ label:hover,
+.ratingArea > input:checked ~ label:hover ~ label,
+.ratingArea > label:hover ~ input:checked ~ label {
+  color: #ffc107;
+  text-shadow: 1px 1px goldenrod;
+}
+
+/*# sourceMappingURL=Rating.module.css.map */

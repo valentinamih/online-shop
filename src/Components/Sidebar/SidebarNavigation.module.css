@@ -1,0 +1,31 @@
+.navigationItem {
+  margin: 0 0 30px 0;
+}
+.navigationItem a {
+  text-decoration: none;
+  color: black;
+  font-size: 19px;
+}
+.navigationItem a:hover {
+  color: #ffc107;
+}
+.navigationItem a:hover::after {
+  left: 0;
+}
+.navigationItem a::after {
+  -webkit-transition-duration: 500ms;
+  transition-duration: 500ms;
+  width: 30px;
+  height: 3px;
+  position: absolute;
+  left: -150px;
+  margin-top: 11px;
+  background-color: #fbb710;
+  z-index: 10;
+  content: "";
+}
+.navigationItem a.active::after {
+  left: 0;
+}
+
+/*# sourceMappingURL=SidebarNavigation.module.css.map */

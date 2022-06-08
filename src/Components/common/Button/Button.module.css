@@ -1,0 +1,13 @@
+.button {
+  padding: 10px 15px;
+  background-color: #ffc107;
+  border: none;
+  color: white;
+}
+.button:hover {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=Button.module.css.map */

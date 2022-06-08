@@ -1,7 +1,7 @@
-import {RootReducerType} from "../store";
+import { RootReducerType } from "../store";
 
 export const colorsSelector = {
-    colors: (store: RootReducerType) => {
-        return store.searchReducer.colors
-    }
-}
+  colors: (store: RootReducerType) => {
+    return store.searchReducer.colors;
+  },
+};

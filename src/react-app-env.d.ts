@@ -1,2 +1,2 @@
 /// <reference types="react-scripts" />
-declare module 'redux-burger-menu'
+declare module "redux-burger-menu";

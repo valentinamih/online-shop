@@ -1,3 +1,5 @@
+@import "./../../styles/colors";
+
 .navigationItem {
   margin: 0 0 30px 0;
   a {
@@ -5,6 +7,7 @@
     color: black;
     font-size: 19px;
     &:hover {
+      color: $orange;
       &::after {
         left: 0;
       }
@@ -19,7 +22,7 @@
       margin-top: 11px;
       background-color: #fbb710;
       z-index: 10;
-      content: '';
+      content: "";
     }
     &.active::after {
       left: 0;

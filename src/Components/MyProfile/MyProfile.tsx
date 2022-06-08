@@ -1,9 +1,7 @@
 import React from "react";
 
-type PropsType = {}
+type PropsType = {};
 
 export const Profile: React.FunctionComponent<PropsType> = (props) => {
-    return <div >
-
-    </div>
-}
+  return <div></div>;
+};

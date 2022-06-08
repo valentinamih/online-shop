@@ -1,7 +1,7 @@
-import {RootReducerType} from "../store";
+import { RootReducerType } from "../store";
 
 export const categoriesSelector = {
-    categories: (store: RootReducerType) => {
-        return store.categoriesReducer.categories
-    }
-}
+  categories: (store: RootReducerType) => {
+    return store.categoriesReducer.categories;
+  },
+};

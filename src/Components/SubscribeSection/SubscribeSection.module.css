@@ -1,0 +1,56 @@
+@media (min-width: 900px) {
+  .subscribeSection {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .subscribeSection {
+    width: 80%;
+  }
+
+  .subscribeForm {
+    width: 85%;
+    justify-self: end;
+  }
+}
+@media (max-width: 900px) {
+  .subscribeSection {
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .subscribeSection {
+    width: 80%;
+  }
+}
+.subscribeSectionContainer {
+  display: grid;
+  align-items: center;
+  grid-area: ss;
+  background-color: #3c3c3c;
+  min-height: 250px;
+}
+
+.subscribeSection {
+  display: grid;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.subscribeHeader {
+  font-size: 30px;
+  color: white;
+  margin-bottom: 10px;
+}
+.subscribeHeader span {
+  color: #ffc107;
+}
+
+.subscribeForm {
+  font-size: 19px;
+}
+
+.subscribeDescription {
+  color: #b3b1b1;
+  line-height: 25px;
+}
+
+/*# sourceMappingURL=SubscribeSection.module.css.map */

@@ -1,1 +1,10 @@
+.productOptions {
+  display: grid;
 
+  button {
+    margin-top: 40px;
+    padding: 15px 20px;
+    max-width: 300px;
+    font-size: 20px;
+  }
+}

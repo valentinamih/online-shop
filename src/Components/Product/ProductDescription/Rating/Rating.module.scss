@@ -1,7 +1,6 @@
 @import "./../../../../styles/colors";
 
 .ratingArea {
-
   width: 80px;
 }
 .ratingArea:not(:checked) > input {
@@ -17,7 +16,7 @@
   text-shadow: 1px 1px #bbb;
 }
 .ratingArea:not(:checked) > label:before {
-  content: '★';
+  content: "★";
 }
 .ratingArea > input:checked ~ label {
   color: $orange;

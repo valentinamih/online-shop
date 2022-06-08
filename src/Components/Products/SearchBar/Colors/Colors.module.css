@@ -1,7 +1,15 @@
-.colorsContainer {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-row-gap: 5px;
-    grid-column-gap: 5px;
-    width: 100px;
+.colors {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-row-gap: 5px;
+  grid-column-gap: 5px;
+  margin-top: 15px;
+  width: 100px;
+}
+
+.color {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  cursor: pointer;
 }

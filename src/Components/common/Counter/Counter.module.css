@@ -1,0 +1,30 @@
+.countArrow {
+  cursor: pointer;
+  width: 20px;
+  text-align: center;
+  font-size: 10px;
+}
+
+.countArrowsContainer {
+  display: grid;
+  align-items: center;
+}
+
+.count {
+  width: 50px;
+  text-align: center;
+  border: none;
+  background-color: #f5f7fa;
+  color: #b3b1b1;
+}
+
+.countBox {
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+  height: 40px;
+  background-color: #f5f7fa;
+  color: #b3b1b1;
+}
+
+/*# sourceMappingURL=Counter.module.css.map */

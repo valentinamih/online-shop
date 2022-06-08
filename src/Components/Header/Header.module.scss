@@ -1,10 +1,10 @@
-@import './../../styles/colors';
+@import "./../../styles/colors";
 
 .header {
-    display: grid;
-    justify-content: center;
-    grid-area: h;
-    margin: 40px 20px 40px 20px;
-    border: solid 5px $orange;
-    border-radius: 50%;
+  display: grid;
+  justify-content: center;
+  grid-area: h;
+  margin: 40px 20px 40px 20px;
+  border: solid 5px $orange;
+  border-radius: 50%;
 }

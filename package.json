@@ -1,6 +1,7 @@
 {
-  "name": "my-app",
+  "name": "online-shop",
   "version": "0.1.0",
+  "homepage": "https://valentinamih.github.io/online-shop",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.2",
@@ -12,18 +13,36 @@
     "@types/react-dom": "^18.0.5",
     "@types/react-redux": "^7.1.24",
     "@types/react-router-dom": "^5.3.3",
+    "eslint-config-react-app": "^7.0.1",
     "formik": "^2.2.9",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.0",
+    "prettier": "^2.6.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-masonry-css": "^1.0.16",
+    "react-range": "^1.8.12",
     "react-redux": "^8.0.2",
     "react-responsive-carousel": "^3.2.23",
     "react-scripts": "5.0.0",
+    "react-tooltip": "^4.2.21",
     "react-use-window-scroll": "^1.0.14",
     "typescript": "^4.5.5",
     "web-vitals": "^2.1.4"
   },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --write"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -50,6 +69,7 @@
   "devDependencies": {
     "@reduxjs/toolkit": "^1.8.1",
     "axios": "^0.27.2",
+    "gh-pages": "^4.0.0",
     "react-router-dom": "^6.3.0"
   }
 }

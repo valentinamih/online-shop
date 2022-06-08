@@ -1,0 +1,7 @@
+.listHeaderContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/*# sourceMappingURL=ProductListHeader.module.css.map */

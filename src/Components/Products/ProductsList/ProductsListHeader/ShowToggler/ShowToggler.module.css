@@ -1,0 +1,27 @@
+.logosContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.logo {
+  padding: 5px;
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.active {
+  filter: invert(50%) sepia(100%) hue-rotate(13deg) saturate(1000%);
+}
+
+.tile {
+  background-image: url("./../../../../../assets/tile.png");
+}
+
+.list {
+  background-image: url("./../../../../../assets/list.png");
+}
+
+/*# sourceMappingURL=ShowToggler.module.css.map */

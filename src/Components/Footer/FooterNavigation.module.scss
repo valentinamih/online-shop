@@ -1,21 +1,18 @@
 @import "./../../styles/colors";
- @media (max-width: 900px) {
-   .navigationItem {
-     display: grid;
-     margin-bottom: 10px;
-   }
-
- }
+@media (max-width: 900px) {
+  .navigationItem {
+    display: grid;
+    margin-bottom: 10px;
+  }
+}
 
 @media (min-width: 900px) {
   .navigationItem {
     display: inline-block;
     margin: 0 30px 0 0;
   }
-
 }
 .navigationItem {
-
   a {
     text-decoration: none;
     color: white;
