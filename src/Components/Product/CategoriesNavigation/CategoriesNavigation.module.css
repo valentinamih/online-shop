@@ -2,5 +2,8 @@
   grid-area: n;
   margin-bottom: 30px;
 }
+.categoriesNavigation a:hover {
+  color: #ffc107;
+}
 
 /*# sourceMappingURL=CategoriesNavigation.module.css.map */

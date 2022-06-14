@@ -13,6 +13,9 @@ import { Footer } from "./Components/Footer/Footer";
 import { requestHomePageProducts } from "./redux/productsSlice";
 import { ProductPage } from "./Components/Product/ProductPage";
 import { requestProducts } from "./redux/searchSlice";
+import {Cart} from "./Components/Cart/Cart";
+
+
 
 type PropsType = {};
 const App: React.FunctionComponent<PropsType> = (props) => {
@@ -29,6 +32,8 @@ const App: React.FunctionComponent<PropsType> = (props) => {
           <Route path={"/online-shop/products"} element={<Products />} />
           <Route path={"/online-shop/"} element={<Home />} />
           <Route path={"/online-shop/product"} element={<ProductPage />} />
+          <Route path={"/online-shop/checkout"} element={<div>checkout</div>} />
+            <Route path={"/online-shop/cart"} element={<Cart />} />
         </Routes>
       </div>
       <SubscribeSection />

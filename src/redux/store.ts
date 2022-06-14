@@ -3,7 +3,7 @@ import categoriesReducer from "./categoriesSlice";
 import productsReducer from "./productsSlice";
 import searchReducer from "./searchSlice";
 import cartReducer from "./cartSlice";
-import { useDispatch } from "react-redux";
+
 
 const rootReducer = combineReducers({
   categoriesReducer,
@@ -13,11 +13,10 @@ const rootReducer = combineReducers({
 });
 
 export type RootReducerType = ReturnType<typeof rootReducer>;
-export type AppStateType = ReturnType<typeof setupStore>;
-export type AppDispatch = AppStateType["dispatch"];
+export type AppStateType = ReturnType<typeof store.getState>
+export type AppDispatch = typeof store.dispatch
 
-export const setupStore = () => {
-  return configureStore({
+
+export const store =  configureStore({
     reducer: rootReducer,
   });
-};

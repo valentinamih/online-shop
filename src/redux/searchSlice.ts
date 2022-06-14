@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { ColorType, ProductType } from "../types/types";
-import { RootReducerType } from "./store";
+import {ColorType, Filter, ProductType} from "../types/types";
+import {AppStateType, RootReducerType} from "./store";
 import { ProductAPI } from "../api/products-api";
 
 type InitialStateType = {
@@ -70,6 +70,23 @@ export const requestProducts = createAsyncThunk(
   }
 );
 
+export const sortProducts = createAsyncThunk(
+    "products/sortProducts",
+    async function (filter: Filter, thunkAPI) {
+      let state = thunkAPI.getState() as AppStateType
+      if (filter.condition === 'reverse') {
+        return state.searchReducer.filteredProducts.slice().sort((prev: ProductType, next: ProductType) => {
+          if (filter.filter(prev) > filter.filter(next)) return -1;
+          return 1
+        })
+      }
+      return state.searchReducer.filteredProducts.slice().sort((prev: ProductType, next: ProductType) => {
+        if (filter.filter(prev) < filter.filter(next)) return -1;
+        return 1
+      })
+    }
+)
+
 const searchSlice = createSlice({
   name: "search",
   initialState: initialState,
@@ -98,6 +115,9 @@ const searchSlice = createSlice({
       state.filteredProducts = action.payload.content;
       state.isFetching = false;
     });
+    builder.addCase(sortProducts.fulfilled, (state, action) => {
+      state.filteredProducts = action.payload
+    })
   },
 });
 

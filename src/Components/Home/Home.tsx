@@ -7,7 +7,7 @@ import { GridItem } from "./GridItem/GridItem";
 import Masonry from "react-masonry-css";
 import { NavLink } from "react-router-dom";
 
-type PropsType = {};
+
 export const Home: React.FunctionComponent<PropsType> = (props) => {
   let homePageProducts = AppUseSelector(productsSelector.homePageProducts);
   const breakpoints = {
@@ -23,6 +23,7 @@ export const Home: React.FunctionComponent<PropsType> = (props) => {
         columnClassName={style.masonryGridColumn}
       >
         {homePageProducts.map((product: ProductType) => {
+
           let height = "";
           if (counter === 2 || counter === 9) {
             height = "70vh";
@@ -44,3 +45,6 @@ export const Home: React.FunctionComponent<PropsType> = (props) => {
     </div>
   );
 };
+
+
+type PropsType = {};

@@ -14,7 +14,7 @@
   width: 50px;
   text-align: center;
   border: none;
-  background-color: #f5f7fa;
+  background-color: rgba(245, 247, 250, 0.84);
   color: #b3b1b1;
 }
 
@@ -23,7 +23,7 @@
   flex-direction: row;
   width: fit-content;
   height: 40px;
-  background-color: #f5f7fa;
+  background-color: rgba(245, 247, 250, 0.84);
   color: #b3b1b1;
 }
 

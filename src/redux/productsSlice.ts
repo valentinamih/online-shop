@@ -4,11 +4,11 @@ import { ProductType } from "../types/types";
 
 type initialStateType = {
   homePageProducts: Array<ProductType>;
-  product: ProductType | null;
+  product: ProductType;
 };
 const InitialState: initialStateType = {
   homePageProducts: [],
-  product: null,
+  product: {} as ProductType,
 };
 
 export const requestHomePageProducts = createAsyncThunk(
@@ -20,18 +20,19 @@ export const requestHomePageProducts = createAsyncThunk(
 );
 
 const productsSlice = createSlice({
-  name: "products",
-  initialState: InitialState,
-  reducers: {
-    setProduct(state, action: PayloadAction<ProductType>) {
-      state.product = action.payload;
+    name: "products",
+    initialState: InitialState,
+    reducers: {
+        setProduct(state, action: PayloadAction<ProductType>) {
+            state.product = action.payload;
+        },
+
     },
-  },
-  extraReducers: (builder) => {
-    builder.addCase(requestHomePageProducts.fulfilled, (state, action) => {
-      state.homePageProducts = action.payload;
-    });
-  },
+    extraReducers: (builder) => {
+        builder.addCase(requestHomePageProducts.fulfilled, (state, action) => {
+            state.homePageProducts = action.payload;
+        });
+    },
 });
 
 export default productsSlice.reducer;

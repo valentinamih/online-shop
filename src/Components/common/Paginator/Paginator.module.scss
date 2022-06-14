@@ -1,0 +1,20 @@
+@import "./../../../styles/colors";
+
+.paginatorContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-top: 15px;
+}
+
+.paginatorItem {
+  padding: 10px 15px;
+  font-weight: bold;
+  &:hover {
+    background-color: $orange;
+  }
+}
+
+.active {
+  background-color: $orange;
+}

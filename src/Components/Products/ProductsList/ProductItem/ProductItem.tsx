@@ -9,6 +9,7 @@ import { AppDispatch } from "../../../../redux/store";
 import { NavLink } from "react-router-dom";
 import { setProduct } from "../../../../redux/productsSlice";
 import ReactTooltip from "react-tooltip";
+import {baseImagesUrl} from "../../../../api/products-api";
 
 export const ProductItem: React.FunctionComponent<PropsType> = (props) => {
   let fooRef: any = null
@@ -20,32 +21,28 @@ export const ProductItem: React.FunctionComponent<PropsType> = (props) => {
       product: props.product,
       count: count++,
     };
-    debugger
     dispatch(addItemToCard(product));
     ReactTooltip.show(fooRef)
     setTimeout(() => {
       ReactTooltip.hide(fooRef)
     }, 4000)
   };
-  const onProductNameClick = () => {
+  const onProductClick = () => {
     dispatch(setProduct(props.product));
   };
     return (
     <div className={props.style.productItem}>
       <img
-        src={props.product.listImages[0].content}
+          src={baseImagesUrl + props.product.cardImages[1].name}
         className={props.style.productItemImage}
       />
       <div>
         <NavLink to={"/online-shop/product"}>
           {props.isProductsShowByList ? (
-            <div>
-              <span
-                onClick={() => {
-                  onProductNameClick();
-                }}
-                className={props.style.name}
-              >
+            <div onClick={() => {
+            onProductClick();
+          }}>
+              <span className={props.style.name}>
                 {props.product.name}
               </span>
               <PriceItem
@@ -55,17 +52,15 @@ export const ProductItem: React.FunctionComponent<PropsType> = (props) => {
               />
             </div>
           ) : (
-            <div>
+            <div onClick={() => {
+              onProductClick();
+            }}>
               <PriceItem
                 price={props.product.price}
                 color={"orange"}
                 fontSize={19}
               />
-              <span
-                onClick={() => {
-                  onProductNameClick();
-                }}
-              >
+              <span>
                 {props.product.name}
               </span>
             </div>

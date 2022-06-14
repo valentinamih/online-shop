@@ -4,11 +4,13 @@ import { CartItem } from "../types/types";
 type InitialStateType = {
   isSubscribed: boolean;
   cart: Array<CartItem>;
+  totalAmount: number
 };
 
 let initialState: InitialStateType = {
   isSubscribed: false,
   cart: [],
+  totalAmount: 0
 };
 
 const cartSlice = createSlice({

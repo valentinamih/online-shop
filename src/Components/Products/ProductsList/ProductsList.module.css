@@ -13,4 +13,8 @@
   flex-direction: column;
 }
 
+.message {
+  font-weight: bold;
+}
+
 /*# sourceMappingURL=ProductsList.module.css.map */

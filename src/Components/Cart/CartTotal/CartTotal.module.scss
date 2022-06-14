@@ -1,0 +1,7 @@
+@import "./../../../styles/colors";
+
+.cartTotal {
+  display: grid;
+  grid-area: t;
+  background-color: $light-gray;
+}

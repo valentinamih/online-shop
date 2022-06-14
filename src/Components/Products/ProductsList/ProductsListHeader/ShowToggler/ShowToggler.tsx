@@ -17,7 +17,7 @@ export const ShowToggler: React.FunctionComponent<PropsType> = (props) => {
           tile: true,
         })}
         onClick={() => dispatch(toggleShowByList(false))}
-      ></div>
+      > </div>
       <div
         className={cx({
           logo: true,
@@ -25,7 +25,7 @@ export const ShowToggler: React.FunctionComponent<PropsType> = (props) => {
           list: true,
         })}
         onClick={() => dispatch(toggleShowByList(true))}
-      ></div>
+      > </div>
     </div>
   );
 };

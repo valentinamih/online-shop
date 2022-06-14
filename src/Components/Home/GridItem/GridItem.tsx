@@ -3,8 +3,9 @@ import style from "./GridItem.module.css";
 import { ProductType } from "../../../types/types";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../../../redux/store";
-import { setProduct } from "../../../redux/productsSlice";
+import {setProduct} from "../../../redux/productsSlice";
 import { PriceItem } from "../../common/Price/PriceItem";
+import {baseImagesUrl} from "../../../api/products-api";
 
 type PropsType = {
   product: ProductType;
@@ -23,7 +24,9 @@ export const GridItem: React.FunctionComponent<PropsType> = (props) => {
         onGridItemClick();
       }}
       style={{
-        backgroundImage: `url(${props.product.cardImages[0].content})`,
+        backgroundImage: `url(${props.product.cardImages 
+            ? baseImagesUrl + props.product.cardImages[0].name 
+            : null})`,
         height: props.height,
       }}
     >
