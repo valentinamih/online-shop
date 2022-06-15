@@ -14,7 +14,7 @@ const InitialState: initialStateType = {
 export const requestHomePageProducts = createAsyncThunk(
   "products/requestHomePageProducts",
   async function () {
-    let res = await ProductAPI.filterProducts(null, 0, Infinity, "", 0, 9);
+    let res = await ProductAPI.filterProducts(null, 0, Infinity, null, "" ,0, 9);
     return res.data.content as Array<ProductType>;
   }
 );

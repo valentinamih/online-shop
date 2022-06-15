@@ -7,6 +7,9 @@ import listStyle from "./ProductItem/ProductListItem.module.css";
 import tileStyle from "./ProductItem/ProductTileItem.module.css";
 import {searchSelector} from "../../../redux/selectors/searchSelector";
 import {Paginator} from "../../common/Paginator/Paginator";
+import {useDispatch} from "react-redux";
+import {AppDispatch} from "../../../redux/store";
+import {requestProducts, setCategory} from "../../../redux/searchSlice";
 
 const classNames = require("classnames/bind");
 
@@ -16,12 +19,11 @@ export const ProductsList: React.FunctionComponent<PropsType> = (props) => {
     let filteredProducts = AppUseSelector(searchSelector.filteredProducts);
     let isProductsShowByList = AppUseSelector(searchSelector.isProductsShowByList);
 
-    let [currentPage, setCurrentPage] = useState(1)
     let [productsPerPage, setProductsPerPage] = useState(4)
-    let lastProductIndex = currentPage * productsPerPage
+    let lastProductIndex = props.currentPage * productsPerPage
     let firstProductIndex = lastProductIndex - productsPerPage
     let currentProducts = filteredProducts.slice(firstProductIndex, lastProductIndex)
-    const pagination = (pageNumber: number) => setCurrentPage(pageNumber)
+
 
     let productListItemStyle = isProductsShowByList ? listStyle : tileStyle;
     return <div className={style.productsListContainer}>
@@ -49,11 +51,14 @@ export const ProductsList: React.FunctionComponent<PropsType> = (props) => {
                 );
             })}
         </div>
-        <Paginator currentPage={currentPage}
+        <Paginator currentPage={props.currentPage}
                    productsPerPage={productsPerPage}
-                   pagination={pagination}
+                   pagination={props.pagination}
                    totalProductsCount={filteredProducts.length} />
     </div>
 }
 
-type PropsType = {};
+type PropsType = {
+    currentPage: number
+    pagination: (pageNumber: number) => void
+};

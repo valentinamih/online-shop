@@ -16,6 +16,7 @@ export const Category: React.FunctionComponent<PropsType> = (props) => {
   const onCategoryClick = () => {
     dispatch(setCategory(props.code));
     dispatch(requestProducts());
+    props.pagination(1)
   };
   return (
     <p
@@ -35,4 +36,5 @@ export const Category: React.FunctionComponent<PropsType> = (props) => {
 type PropsType = {
   code: string;
   name: string;
+  pagination: (pageNumber: number) => void
 };

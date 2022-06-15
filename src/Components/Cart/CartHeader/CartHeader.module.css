@@ -1,0 +1,8 @@
+.cartHeader {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background-color: rgba(245, 247, 250, 0.84);
+  grid-area: h;
+}
+
+/*# sourceMappingURL=CartHeader.module.css.map */

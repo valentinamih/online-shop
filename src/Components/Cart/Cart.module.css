@@ -1,0 +1,8 @@
+.cartContainer {
+  margin: 20px 40px;
+  display: grid;
+  grid-template-areas: "a a" "h t" "l t";
+  gap: 20px;
+}
+
+/*# sourceMappingURL=Cart.module.css.map */

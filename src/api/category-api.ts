@@ -3,6 +3,6 @@ import { CategoryType } from "../types/types";
 
 export const CategoryAPI = {
   getCategories: () => {
-    return instance.get<Array<CategoryType>>("categories");
+    return instance.get<Array<CategoryType>>("/categories");
   },
 };

@@ -2,12 +2,13 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import {ColorType, Filter, ProductType} from "../types/types";
 import {AppStateType, RootReducerType} from "./store";
 import { ProductAPI } from "../api/products-api";
+import {ColorsAPI} from "../api/colors-api";
 
 type InitialStateType = {
   filteredProducts: Array<ProductType>;
   colors: Array<ColorType>;
-  color: string;
-  categoryCode: string;
+  color: string | null;
+  categoryCode: string | null;
   priceFrom: number;
   priceTo: number;
   productName: string;
@@ -16,40 +17,9 @@ type InitialStateType = {
 };
 const initialState: InitialStateType = {
   filteredProducts: [] as Array<ProductType>,
-  colors: [
-    {
-      id: 1,
-      name: "red",
-      code: "#FF0000",
-    },
-    {
-      id: 2,
-      name: "blue",
-      code: "#000080",
-    },
-    {
-      id: 3,
-      name: "white",
-      code: "#FFFFFF",
-    },
-    {
-      id: 4,
-      name: "beige",
-      code: "#F5DEB3",
-    },
-    {
-      id: 5,
-      name: "gray",
-      code: "#808080",
-    },
-    {
-      id: 6,
-      name: "black",
-      code: "#000000",
-    },
-  ],
-  color: "",
-  categoryCode: "",
+  colors: [] as Array<ColorType>,
+  color: null ,
+  categoryCode: null,
   priceFrom: 0,
   priceTo: Infinity,
   productName: "",
@@ -60,15 +30,25 @@ const initialState: InitialStateType = {
 export const requestProducts = createAsyncThunk(
   "search/requestProducts",
   async function (product, thunkAPI) {
-    let state = thunkAPI.getState() as RootReducerType;
+    let state = thunkAPI.getState() as AppStateType;
     let res = await ProductAPI.filterProducts(
       state.searchReducer.categoryCode,
       state.searchReducer.priceFrom,
-      state.searchReducer.priceTo
+      state.searchReducer.priceTo,
+      state.searchReducer.color
     );
     return res.data;
   }
 );
+
+export const requestColors = createAsyncThunk(
+    'search/requestColors',
+    async function (color, thunkAPI) {
+      let state = thunkAPI.getState() as AppStateType
+      let res = await ColorsAPI.getColors()
+      return res.data
+    }
+)
 
 export const sortProducts = createAsyncThunk(
     "products/sortProducts",
@@ -117,6 +97,9 @@ const searchSlice = createSlice({
     });
     builder.addCase(sortProducts.fulfilled, (state, action) => {
       state.filteredProducts = action.payload
+    })
+    builder.addCase(requestColors.fulfilled, (state, action) => {
+      state.colors = action.payload
     })
   },
 });

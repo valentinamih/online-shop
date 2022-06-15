@@ -9,11 +9,13 @@ export const ProductAPI = {
     filterProducts: (categoryCode: string | null,
                      priceFrom = 0,
                      priceTo = Infinity,
-                     productName?: string | null,
+                     colorCode: string | null,
+                     productName = '',
                      pageNumber = 0,
-                     pageSize = 10) => {
+                     pageSize = 20) => {
         return instance.post("/products/filter", {
             categoryCode,
+            colorCode,
             pageNumber,
             pageSize,
             priceFrom,

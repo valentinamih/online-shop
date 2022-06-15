@@ -19,6 +19,7 @@ export const Price: React.FunctionComponent<PropsType> = (props) => {
     dispatch(setMinPrice(values[0]));
     dispatch(setMaxPrice(values[1]));
     dispatch(requestProducts());
+    props.pagination(1)
   };
   return (
     <div className={style.priceContainer}>
@@ -54,7 +55,7 @@ export const Price: React.FunctionComponent<PropsType> = (props) => {
           </div>
         )}
         renderThumb={({ props, isDragged }) => (
-          <div {...props} className={style.dots}></div>
+          <div {...props} className={style.dots}> </div>
         )}
       />
       <output className={style.output}>
@@ -72,4 +73,6 @@ export const Price: React.FunctionComponent<PropsType> = (props) => {
   );
 };
 
-type PropsType = {};
+type PropsType = {
+    pagination: (pageNumber: number) => void
+};

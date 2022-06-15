@@ -1,0 +1,14 @@
+.selectContainer {
+  display: flex;
+  flex-direction: row;
+  height: 40px;
+  background-color: rgba(245, 247, 250, 0.84);
+  font-weight: bold;
+  font-size: 0.8em;
+}
+.selectContainer p {
+  padding: 0 10px;
+  color: #b3b1b1;
+}
+
+/*# sourceMappingURL=CommonSelect.module.css.map */

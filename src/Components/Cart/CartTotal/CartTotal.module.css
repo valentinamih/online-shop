@@ -1,0 +1,7 @@
+.cartTotal {
+  display: grid;
+  grid-area: t;
+  background-color: rgba(245, 247, 250, 0.84);
+}
+
+/*# sourceMappingURL=CartTotal.module.css.map */

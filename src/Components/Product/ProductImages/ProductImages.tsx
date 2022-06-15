@@ -11,7 +11,7 @@ export const ProductImages: React.FunctionComponent<PropsType> = (props) => {
       className={style.cardImagesContainer}
       infiniteLoop={true}
       autoPlay={true}
-      interval={3000}
+      interval={2000}
       showStatus={false}
       showIndicators={false}
     >

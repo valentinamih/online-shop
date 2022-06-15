@@ -25,7 +25,6 @@ export type ImageType = {
   name: string
 }
 export type ColorType = {
-  id: number;
   name: string;
   code: string;
 };
