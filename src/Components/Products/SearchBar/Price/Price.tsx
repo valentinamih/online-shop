@@ -19,7 +19,7 @@ export const Price: React.FunctionComponent<PropsType> = (props) => {
     dispatch(setMinPrice(values[0]));
     dispatch(setMaxPrice(values[1]));
     dispatch(requestProducts());
-    props.pagination(1)
+    props.pagination(0)
   };
   return (
     <div className={style.priceContainer}>

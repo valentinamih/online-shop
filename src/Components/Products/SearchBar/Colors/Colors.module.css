@@ -13,3 +13,9 @@
   border-radius: 50%;
   cursor: pointer;
 }
+
+.allColors {
+  margin-top: 5px;
+  background-image: url('./../../../../assets/allColors.jpg');
+  background-size: cover;
+}

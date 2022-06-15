@@ -29,7 +29,7 @@ export const Categories: React.FunctionComponent<PropsType> = (props) => {
           );
         })}
       </div>
-        <span onClick={() => {
+        <span className={style.showAll} onClick={() => {
             showAllCategories()
         }}>Все категории</span>
     </div>

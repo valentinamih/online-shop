@@ -13,8 +13,7 @@ export const ProductsListHeader: React.FunctionComponent<PropsType> = (props) =>
             </div>
             <div className={style.selectsContainer}>
                 <SortSelect/>
-                <PaginationSelect productsPerPage={props.productsPerPage}
-                                  onPaginatorChange={props.onPaginatorChange}/>
+                <PaginationSelect />
             </div>
         </div>
     );
@@ -23,6 +22,4 @@ export const ProductsListHeader: React.FunctionComponent<PropsType> = (props) =>
 type PropsType = {
     itemsCount: number;
     isListActive: boolean;
-    productsPerPage: number
-    onPaginatorChange:  React.Dispatch<React.SetStateAction<number>>
 }

@@ -12,7 +12,7 @@ export const ProductAPI = {
                      colorCode: string | null,
                      productName = '',
                      pageNumber = 0,
-                     pageSize = 20) => {
+                     pageSize = 12) => {
         return instance.post("/products/filter", {
             categoryCode,
             colorCode,

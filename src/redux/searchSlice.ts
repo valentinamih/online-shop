@@ -14,6 +14,9 @@ type InitialStateType = {
   productName: string;
   isFetching: boolean;
   isProductsShowByList: boolean;
+  totalProductsCount: number;
+  pageNumber: number
+  pageSize: number
 };
 const initialState: InitialStateType = {
   filteredProducts: [] as Array<ProductType>,
@@ -25,23 +28,31 @@ const initialState: InitialStateType = {
   productName: "",
   isFetching: false,
   isProductsShowByList: false,
+  totalProductsCount: 0,
+  pageNumber: 0,
+  pageSize: 6
 };
 
 export const requestProducts = createAsyncThunk(
-  "search/requestProducts",
-  async function (product, thunkAPI) {
-    let state = thunkAPI.getState() as AppStateType;
-    let res = await ProductAPI.filterProducts(
-      state.searchReducer.categoryCode,
-      state.searchReducer.priceFrom,
-      state.searchReducer.priceTo,
-      state.searchReducer.color
-    );
-    return res.data;
-  }
+    "search/requestProducts",
+    async function (product, thunkAPI) {
+
+      let state = thunkAPI.getState() as AppStateType;
+      let res = await ProductAPI.filterProducts(
+          state.searchReducer.categoryCode,
+          state.searchReducer.priceFrom,
+          state.searchReducer.priceTo,
+          state.searchReducer.color,
+          '',
+          state.searchReducer.pageNumber,
+          state.searchReducer.pageSize
+      );
+      return res;
+    }
 );
 
 export const requestColors = createAsyncThunk(
+
     'search/requestColors',
     async function (color, thunkAPI) {
       let state = thunkAPI.getState() as AppStateType
@@ -86,13 +97,20 @@ const searchSlice = createSlice({
     toggleShowByList: (state, action) => {
       state.isProductsShowByList = action.payload;
     },
+    setPageNumber: (state, action) => {
+      state.pageNumber = action.payload
+    },
+    setPageSize: (state, action) => {
+      state.pageSize = action.payload
+    }
   },
   extraReducers: (builder) => {
     builder.addCase(requestProducts.pending, (state, action) => {
       state.isFetching = true;
     });
     builder.addCase(requestProducts.fulfilled, (state, action) => {
-      state.filteredProducts = action.payload.content;
+      state.filteredProducts = action.payload.data.content;
+      state.totalProductsCount = action.payload.data.totalElements
       state.isFetching = false;
     });
     builder.addCase(sortProducts.fulfilled, (state, action) => {
@@ -111,4 +129,6 @@ export const {
   setMinPrice,
   setCategory,
   toggleShowByList,
+  setPageSize,
+  setPageNumber
 } = searchSlice.actions;

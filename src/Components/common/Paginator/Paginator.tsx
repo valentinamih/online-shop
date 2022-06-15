@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import style from './Paginator.module.css'
 import classNames from "classnames/bind";
 
@@ -14,9 +14,9 @@ export const Paginator: React.FunctionComponent<PropsType> = ({totalProductsCoun
     }
     return <div className={style.paginatorContainer}>
         {pages.map((page) => {
-            return <div onClick={() => pagination(page)} key={page} className={cx({
+            return <div onClick={() => pagination(page )} key={page} className={cx({
                 paginatorItem: true,
-                active: currentPage === page
+                active: currentPage + 1 === page
             })}>
                 {page}
             </div>

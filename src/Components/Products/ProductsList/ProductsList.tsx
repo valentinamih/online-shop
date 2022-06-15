@@ -16,32 +16,26 @@ const classNames = require("classnames/bind");
 let cx = classNames.bind(style);
 
 export const ProductsList: React.FunctionComponent<PropsType> = (props) => {
+    let currentPage = AppUseSelector(searchSelector.currentPage)
     let filteredProducts = AppUseSelector(searchSelector.filteredProducts);
+    let totalProductsCount = AppUseSelector(searchSelector.totalProductsCount)
     let isProductsShowByList = AppUseSelector(searchSelector.isProductsShowByList);
-
-    let [productsPerPage, setProductsPerPage] = useState(4)
-    let lastProductIndex = props.currentPage * productsPerPage
-    let firstProductIndex = lastProductIndex - productsPerPage
-    let currentProducts = filteredProducts.slice(firstProductIndex, lastProductIndex)
-
-
+    let pageSize = AppUseSelector(searchSelector.pageSize)
     let productListItemStyle = isProductsShowByList ? listStyle : tileStyle;
     return <div className={style.productsListContainer}>
         <ProductsListHeader
-            onPaginatorChange={setProductsPerPage}
-            productsPerPage={productsPerPage}
-            itemsCount={filteredProducts.length}
+            itemsCount={totalProductsCount}
             isListActive={isProductsShowByList}
         />
         <div className={cx({
                 productsList: isProductsShowByList,
                 productsTile: !isProductsShowByList,
             })}>
-            {!currentProducts.length ? <p className={style.message}>
+            {!filteredProducts.length ? <p className={style.message}>
                 Выберите категорию
             </p>
             : null}
-            {currentProducts.map((product) => {
+            {filteredProducts.map((product) => {
                 return (
                     <ProductItem
                         product={product}
@@ -51,14 +45,13 @@ export const ProductsList: React.FunctionComponent<PropsType> = (props) => {
                 );
             })}
         </div>
-        <Paginator currentPage={props.currentPage}
-                   productsPerPage={productsPerPage}
+        <Paginator currentPage={currentPage}
+                   productsPerPage={pageSize}
                    pagination={props.pagination}
-                   totalProductsCount={filteredProducts.length} />
+                   totalProductsCount={totalProductsCount} />
     </div>
 }
 
 type PropsType = {
-    currentPage: number
     pagination: (pageNumber: number) => void
 };
