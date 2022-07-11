@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["Button.module.scss","../../../styles/colors.scss"],"names":[],"mappings":"AAEA;EACE;EACA,kBCHO;EDIP;EACA;;AACA;EACE;EACA;EACA","file":"Button.module.css"}
+{"version":3,"sourceRoot":"","sources":["Button.module.scss","../../../styles/colors.scss"],"names":[],"mappings":"AAEA;EACE;EACA,kBCHO;EDIP;EACA;;AAEA;EACE;EACA;EACA","file":"Button.module.css"}

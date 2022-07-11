@@ -1,7 +1,8 @@
 .cartHeader {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 150px 1fr 1fr 1fr;
   background-color: rgba(245, 247, 250, 0.84);
+  align-items: center;
   grid-area: h;
 }
 

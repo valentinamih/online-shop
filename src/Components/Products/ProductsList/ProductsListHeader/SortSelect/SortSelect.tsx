@@ -5,15 +5,15 @@ import {AppDispatch} from "../../../../../redux/store";
 import {Filter, ProductType} from "../../../../../types/types";
 import {sortProducts} from "../../../../../redux/searchSlice";
 
-export const SortSelect: React.FunctionComponent<PropsType> = props => {
+export const SortSelect: React.FunctionComponent = () => {
     const dispatch = useDispatch<AppDispatch>()
     const sort = (filter: Filter) => {
         dispatch(sortProducts(filter))
     }
     const sortOptions = [
-        { value: 'name', label: 'названию' },
-        { value: 'price', label: 'цене (по возрастанию)' },
-        { value: 'priceDown', label: 'цене (по убыванию)' }
+        {value: 'name', label: 'названию'},
+        {value: 'price', label: 'цене (по возрастанию)'},
+        {value: 'priceDown', label: 'цене (по убыванию)'}
     ]
     const sortOnChange = (selectedOption: OptionsType) => {
         if (selectedOption) {
@@ -30,8 +30,7 @@ export const SortSelect: React.FunctionComponent<PropsType> = props => {
                         return product.price
                     }
                 })
-            }
-            else {
+            } else {
                 sort({
                     filter: (product: ProductType) => {
                         return product.name
@@ -45,9 +44,6 @@ export const SortSelect: React.FunctionComponent<PropsType> = props => {
                       onChange={sortOnChange}
                       title={'Сортировать по'}
                       placeholder={'выбрать'}
-                      width={'200px'}
-        />
+                      width={'200px'}/>
     </div>
 }
-
-type PropsType = {}

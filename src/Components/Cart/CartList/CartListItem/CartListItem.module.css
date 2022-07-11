@@ -1,3 +1,10 @@
+.cartListItem {
+  display: grid;
+  grid-template-columns: 150px 1fr 1fr 1fr;
+  align-items: center;
+  font-weight: bold;
+}
+
 .cartListImage {
   width: 150px;
   height: 150px;

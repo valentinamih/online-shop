@@ -11,6 +11,7 @@
   background-size: contain;
   background-repeat: no-repeat;
   cursor: pointer;
+
   &:hover {
     filter: invert(50%) sepia(100%) hue-rotate(10deg) saturate(1000%);
   }

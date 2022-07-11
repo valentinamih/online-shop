@@ -2,7 +2,8 @@
 
 .cartHeader {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 150px 1fr 1fr 1fr;
   background-color: $light-gray;
+  align-items: center;
   grid-area: h;
 }

@@ -6,8 +6,7 @@ import {requestProducts, setPageSize} from "../../../../../redux/searchSlice";
 import {AppUseSelector} from "../../../../../redux/appUseSelector";
 import {searchSelector} from "../../../../../redux/selectors/searchSelector";
 
-
-export const PaginationSelect: React.FunctionComponent<PropsType> = props => {
+export const PaginationSelect: React.FunctionComponent = () => {
     let pageSize = AppUseSelector(searchSelector.pageSize)
     const dispatch = useDispatch<AppDispatch>();
     const options: Array<OptionsType> = [
@@ -23,10 +22,6 @@ export const PaginationSelect: React.FunctionComponent<PropsType> = props => {
                       options={options}
                       title={'Показать'}
                       placeholder={String(pageSize)}
-                      width={'fit-content'}
-        />
+                      width={'fit-content'}/>
     </div>
-}
-
-type PropsType = {
 }

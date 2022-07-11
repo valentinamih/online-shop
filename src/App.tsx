@@ -1,19 +1,19 @@
 import React from "react";
 import style from "./App.module.css";
-import { Header } from "./Components/Header/Header";
-import { Products } from "./Components/Products/Products";
-import { Sidebar } from "./Components/Sidebar/Sidebar";
+import { Header } from "./components/Header/Header";
+import { Products } from "./components/Products/Products";
+import { Sidebar } from "./components/Sidebar/Sidebar";
 import { requestCategories } from "./redux/categoriesSlice";
 import { Route, Routes } from "react-router-dom";
-import { Home } from "./Components/Home/Home";
+import { Home } from "./components/Home/Home";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "./redux/store";
-import { SubscribeSection } from "./Components/SubscribeSection/SubscribeSection";
-import { Footer } from "./Components/Footer/Footer";
+import { SubscribeSection } from "./components/SubscribeSection/SubscribeSection";
+import { Footer } from "./components/Footer/Footer";
 import { requestHomePageProducts } from "./redux/productsSlice";
-import { ProductPage } from "./Components/Product/ProductPage";
+import { ProductPage } from "./components/Product/ProductPage";
 import { requestProducts } from "./redux/searchSlice";
-import {Cart} from "./Components/Cart/Cart";
+import {Cart} from "./components/Cart/Cart";
 
 
 

@@ -24,7 +24,7 @@ const cartSlice = createSlice({
       let isAdded = false;
       for (let i = 0; i < state.cart.length; i++) {
         if (state.cart[i].product.id === action.payload.product.id) {
-          state.cart[i].count += action.payload.count;
+          state.cart[i].count = action.payload.count;
           isAdded = true;
         }
       }

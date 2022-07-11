@@ -4,12 +4,14 @@ a {
   text-decoration: none;
   color: $dark-gray;
 }
+
 .gridItem {
   width: 100%;
-  background-size: 70% 70%;
+  background-size: 60% 60%;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: bottom;
   background-color: white;
+
   &:hover {
     filter: brightness(50%);
     transition: 0.5s;

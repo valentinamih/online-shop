@@ -2,16 +2,20 @@
 
 .navigationItem {
   margin: 0 0 30px 0;
+
   a {
     text-decoration: none;
     color: black;
     font-size: 19px;
+
     &:hover {
       color: $orange;
+
       &::after {
         left: 0;
       }
     }
+
     &::after {
       -webkit-transition-duration: 500ms;
       transition-duration: 500ms;
@@ -24,6 +28,7 @@
       z-index: 10;
       content: "";
     }
+
     &.active::after {
       left: 0;
     }

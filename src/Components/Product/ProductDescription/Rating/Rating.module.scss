@@ -3,9 +3,11 @@
 .ratingArea {
   width: 80px;
 }
+
 .ratingArea:not(:checked) > input {
   display: none;
 }
+
 .ratingArea:not(:checked) > label {
   float: right;
   width: 15px;
@@ -15,17 +17,21 @@
   color: $gray;
   text-shadow: 1px 1px #bbb;
 }
+
 .ratingArea:not(:checked) > label:before {
   content: "★";
 }
+
 .ratingArea > input:checked ~ label {
   color: $orange;
   text-shadow: 1px 1px #c60;
 }
+
 .ratingArea:not(:checked) > label:hover,
 .ratingArea:not(:checked) > label:hover ~ label {
   color: $orange;
 }
+
 .ratingArea > input:checked + label:hover,
 .ratingArea > input:checked + label:hover ~ label,
 .ratingArea > input:checked ~ label:hover,

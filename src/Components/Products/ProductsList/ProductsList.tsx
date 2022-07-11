@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import style from "./ProductsList.module.css";
 import {AppUseSelector} from "../../../redux/appUseSelector";
 import {ProductItem} from "./ProductItem/ProductItem";
@@ -7,12 +7,8 @@ import listStyle from "./ProductItem/ProductListItem.module.css";
 import tileStyle from "./ProductItem/ProductTileItem.module.css";
 import {searchSelector} from "../../../redux/selectors/searchSelector";
 import {Paginator} from "../../common/Paginator/Paginator";
-import {useDispatch} from "react-redux";
-import {AppDispatch} from "../../../redux/store";
-import {requestProducts, setCategory} from "../../../redux/searchSlice";
 
 const classNames = require("classnames/bind");
-
 let cx = classNames.bind(style);
 
 export const ProductsList: React.FunctionComponent<PropsType> = (props) => {
@@ -25,16 +21,15 @@ export const ProductsList: React.FunctionComponent<PropsType> = (props) => {
     return <div className={style.productsListContainer}>
         <ProductsListHeader
             itemsCount={totalProductsCount}
-            isListActive={isProductsShowByList}
-        />
+            isListActive={isProductsShowByList}/>
         <div className={cx({
-                productsList: isProductsShowByList,
-                productsTile: !isProductsShowByList,
-            })}>
+            productsList: isProductsShowByList,
+            productsTile: !isProductsShowByList,
+        })}>
             {!filteredProducts.length ? <p className={style.message}>
-                Выберите категорию
-            </p>
-            : null}
+                    Выберите категорию
+                </p>
+                : null}
             {filteredProducts.map((product) => {
                 return (
                     <ProductItem
@@ -48,10 +43,10 @@ export const ProductsList: React.FunctionComponent<PropsType> = (props) => {
         <Paginator currentPage={currentPage}
                    productsPerPage={pageSize}
                    pagination={props.pagination}
-                   totalProductsCount={totalProductsCount} />
+                   totalProductsCount={totalProductsCount}/>
     </div>
 }
 
-type PropsType = {
+interface PropsType {
     pagination: (pageNumber: number) => void
 };

@@ -4,13 +4,13 @@ import {CartHeader} from "./CartHeader/CartHeader";
 import {CartList} from "./CartList/CartList";
 import {CartTotal} from "./CartTotal/CartTotal";
 
-export const Cart: React.FunctionComponent<PropsType> = (props) => {
+
+export const Cart: React.FunctionComponent = () => {
     return <div className={style.cartContainer}>
         <h2 className={style.headline}>Корзина</h2>
-        <CartHeader />
-        <CartList />
-        <CartTotal />
+        <CartHeader/>
+        <CartList/>
+        <CartTotal/>
     </div>
 }
 
-type PropsType = {}

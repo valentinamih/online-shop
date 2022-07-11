@@ -18,14 +18,17 @@
 
 .footerLogo {
   justify-self: start;
+
   span {
     color: $gray;
     font-size: 12px;
   }
+
   a {
     color: $orange;
     text-decoration: none;
   }
+
   h1 {
     margin-bottom: 5px;
   }

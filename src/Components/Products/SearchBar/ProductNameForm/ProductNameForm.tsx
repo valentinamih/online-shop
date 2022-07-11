@@ -1,7 +1,7 @@
 import React from "react";
 
-export const ProductNameForm: React.FunctionComponent<PropsType> = (props) => {
-  return <div></div>;
-};
+export const ProductNameForm: React.FunctionComponent = () => {
+  return <div>
 
-type PropsType = {};
+  </div>;
+};
