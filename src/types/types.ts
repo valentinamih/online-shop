@@ -20,10 +20,20 @@ export interface ProductType {
   }
 }
 
+export interface filterProductsRequestType {
+  categoryCode: string | null
+  priceFrom: number
+  priceTo: number
+  colorCode: string | null
+  productName: string
+  pageNumber: number
+  pageSize: number
+}
 export interface ImageType {
   type: string
   name: string
 }
+
 export interface ColorType {
   name: string
   code: string
@@ -34,7 +44,31 @@ export interface CartItem {
   count: number
 };
 
-export interface Filter {
-  filter: (product: ProductType) => {}
-  condition?: string
+export interface PageableResponse {
+  "content": [ProductType],
+  "empty": boolean,
+  "first": boolean,
+  "last": boolean,
+  "number": number,
+  "numberOfElements": number,
+  "pageable": {
+    "offset": number,
+    "pageNumber": number,
+    "pageSize": number,
+    "paged": boolean,
+    "sort": {
+      "empty": boolean,
+      "sorted": boolean,
+      "unsorted": boolean
+    },
+    "unpaged": boolean
+  },
+  "size": number,
+  "sort": {
+    "empty": boolean,
+    "sorted": boolean,
+    "unsorted": boolean
+  },
+  "totalElements": number,
+  "totalPages": number
 }

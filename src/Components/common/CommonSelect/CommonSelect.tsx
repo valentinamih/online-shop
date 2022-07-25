@@ -41,7 +41,6 @@ export const CommonSelect: React.FunctionComponent<PropsType> = props => {
     </div>
 }
 
-
 interface PropsType  {
     onChange: (selectedOption: OptionsType) => void
     options: Array<OptionsType>

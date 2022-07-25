@@ -26,7 +26,6 @@ const productsSlice = createSlice({
         setProduct(state, action: PayloadAction<ProductType>) {
             state.product = action.payload;
         },
-
     },
     extraReducers: (builder) => {
         builder.addCase(requestHomePageProducts.fulfilled, (state, action) => {

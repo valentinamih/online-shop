@@ -7,17 +7,18 @@ import {PaginationSelect} from "./PaginationSelect/PaginationSelect";
 export const ProductsListHeader: React.FunctionComponent<PropsType> = (props) => {
     return <div className={style.listHeaderContainer}>
         <div>
-            <p>Найдено {props.itemsCount} товаров</p>
+            <p>Найдено {props.itemsCount || '0'} товаров</p>
             <ShowToggler isListActive={props.isListActive}/>
         </div>
         <div className={style.selectsContainer}>
-            <SortSelect/>
-            <PaginationSelect/>
+            <SortSelect getProducts={props.getProducts}/>
+            <PaginationSelect getProducts={props.getProducts}/>
         </div>
     </div>
 };
 
 interface PropsType {
-    itemsCount: number;
-    isListActive: boolean;
+    itemsCount: number | null
+    isListActive: boolean
+    getProducts: () => void
 }

@@ -1,15 +1,15 @@
 import {combineReducers, configureStore} from "@reduxjs/toolkit";
-import categoriesReducer from "./categoriesSlice";
 import productsReducer from "./productsSlice";
 import searchReducer from "./searchSlice";
 import cartReducer from "./cartSlice";
+import {apiSlice} from "../api/apiSlice";
 
 
 const rootReducer = combineReducers({
-  categoriesReducer,
-  productsReducer,
-  searchReducer,
-  cartReducer,
+    productsReducer,
+    searchReducer,
+    cartReducer,
+    [apiSlice.reducerPath]: apiSlice.reducer
 });
 
 export type RootReducerType = ReturnType<typeof rootReducer>;
@@ -18,12 +18,12 @@ export type AppDispatch = typeof store.dispatch
 
 
 export const store = configureStore({
-      reducer: rootReducer,
-      middleware: (getDefaultMiddleware) =>
-          getDefaultMiddleware({
-            serializableCheck: {
-              ignoredActions: ['search/requestProducts/fulfilled'],
-            },
-          }),
+        reducer: rootReducer,
+        middleware: (getDefaultMiddleware) =>
+            getDefaultMiddleware({
+                serializableCheck: {
+                    ignoredActions: ['search/requestProducts/fulfilled'],
+                },
+            }).concat(apiSlice.middleware)
     }
 );
