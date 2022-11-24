@@ -1,14 +1,14 @@
-import React from "react";
-import style from "./App.module.css";
-import {Header} from "./components/Header/Header";
-import {Products} from "./components/Products/Products";
-import {Sidebar} from "./components/Sidebar/Sidebar";
-import {Route, Routes} from "react-router-dom";
-import {Home} from "./components/Home/Home";
-import {SubscribeSection} from "./components/SubscribeSection/SubscribeSection";
-import {Footer} from "./components/Footer/Footer";
-import {ProductPage} from "./components/Product/ProductPage";
-import {Cart} from "./components/Cart/Cart";
+import React from "react"
+import style from "./App.module.css"
+import {Header} from "./components/Header/Header"
+import {Products} from "./components/Products/Products"
+import {Sidebar} from "./components/Sidebar/Sidebar"
+import {Route, Routes} from "react-router-dom"
+import {Home} from "./components/Home/Home"
+import {SubscribeSection} from "./components/SubscribeSection/SubscribeSection"
+import {Footer} from "./components/Footer/Footer"
+import {ProductPage} from "./components/Product/ProductPage"
+import {Cart} from "./components/Cart/Cart"
 
 const App: React.FunctionComponent = () => {
     return (
@@ -27,7 +27,7 @@ const App: React.FunctionComponent = () => {
             <SubscribeSection/>
             <Footer/>
         </div>
-    );
-};
+    )
+}
 
-export default App;
+export default App

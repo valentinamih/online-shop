@@ -1,6 +1,6 @@
-import React from "react";
-import style from "./SubscribeSection.module.css";
-import {SubscribeForm} from "./SubscribeForm/SubscribeForm";
+import React from "react"
+import style from "./SubscribeSection.module.css"
+import {SubscribeForm} from "./SubscribeForm/SubscribeForm"
 
 export const SubscribeSection: React.FunctionComponent = () => {
     return <div className={style.subscribeSectionContainer}>
@@ -20,5 +20,5 @@ export const SubscribeSection: React.FunctionComponent = () => {
             </div>
         </section>
     </div>
-};
+}
 

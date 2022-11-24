@@ -1,9 +1,9 @@
-import React from "react";
-import {Categories} from "./Categories/Categories";
-import {Price} from "./Price/Price";
-import {Colors} from "./Colors/Colors";
-import style from "./SearchBar.module.css";
-import {Button} from "../../common/Button/Button";
+import React from "react"
+import {Categories} from "./Categories/Categories"
+import {Price} from "./Price/Price"
+import {Colors} from "./Colors/Colors"
+import style from "./SearchBar.module.css"
+import {Button} from "../../common/Button/Button"
 
 export const SearchBar: React.FunctionComponent<PropsType> = (props) => {
     return (
@@ -16,10 +16,10 @@ export const SearchBar: React.FunctionComponent<PropsType> = (props) => {
                 onClickFunction={props.getProducts}
                 type={"button"} />
         </div>
-    );
-};
+    )
+}
 
 type PropsType = {
     pagination: (pageNumber: number) => void
     getProducts: () => void
-};
+}

@@ -1,35 +1,35 @@
-import React from "react";
-import {CartItem, ProductType} from "../../../../types/types";
-import {PriceItem} from "../../../common/Price/PriceItem";
-import {Rating} from "../../../Product/ProductDescription/Rating/Rating";
-import cart from "./../../../../assets/cart.png";
-import {addItemToCard} from "../../../../redux/cartSlice";
-import {useDispatch} from "react-redux";
-import {AppDispatch} from "../../../../redux/store";
-import {NavLink} from "react-router-dom";
-import {setProduct} from "../../../../redux/productsSlice";
-import ReactTooltip from "react-tooltip";
-import {baseImagesUrl} from "../../../../api/products-api";
+import React from "react"
+import {CartItem, ProductType} from "../../../../types/types"
+import {PriceItem} from "../../../common/Price/PriceItem"
+import {Rating} from "../../../Product/ProductDescription/Rating/Rating"
+import cart from "./../../../../assets/cart.png"
+import {addItemToCard} from "../../../../redux/cartSlice"
+import {useDispatch} from "react-redux"
+import {AppDispatch} from "../../../../redux/store"
+import {NavLink} from "react-router-dom"
+import {setProduct} from "../../../../redux/productsSlice"
+import ReactTooltip from "react-tooltip"
+import {baseImagesUrl} from "../../../../api/products-api"
 
 export const ProductItem: React.FunctionComponent<PropsType> = (props) => {
     let fooRef: any = null
-    let count = 1;
-    const dispatch = useDispatch<AppDispatch>();
+    let count = 1
+    const dispatch = useDispatch<AppDispatch>()
     const onAddClick = () => {
-        dispatch(setProduct(props.product));
+        dispatch(setProduct(props.product))
         const product: CartItem = {
             product: props.product,
             count: count++,
-        };
-        dispatch(addItemToCard(product));
+        }
+        dispatch(addItemToCard(product))
         ReactTooltip.show(fooRef)
         setTimeout(() => {
             ReactTooltip.hide(fooRef)
         }, 4000)
-    };
+    }
     const onProductClick = () => {
-        dispatch(setProduct(props.product));
-    };
+        dispatch(setProduct(props.product))
+    }
     return <div className={props.style.productItem}>
         <img
             src={baseImagesUrl + props.product.cardImages[1].name}
@@ -38,7 +38,7 @@ export const ProductItem: React.FunctionComponent<PropsType> = (props) => {
             <NavLink to={"/online-shop/product"}>
                 {props.isProductsShowByList ? (
                     <div onClick={() => {
-                        onProductClick();
+                        onProductClick()
                     }}>
               <span className={props.style.name}>
                 {props.product.name}
@@ -50,7 +50,7 @@ export const ProductItem: React.FunctionComponent<PropsType> = (props) => {
                     </div>
                 ) : (
                     <div onClick={() => {
-                        onProductClick();
+                        onProductClick()
                     }}>
                         <PriceItem
                             price={props.product.price}
@@ -78,11 +78,10 @@ export const ProductItem: React.FunctionComponent<PropsType> = (props) => {
             <ReactTooltip eventOff={'click'} type={'success'} place={'left'}/>
         </div>
     </div>
-
-};
+}
 
 interface PropsType {
-    product: ProductType;
-    style: { [key: string]: string };
-    isProductsShowByList: boolean;
-};
+    product: ProductType
+    style: { [key: string]: string }
+    isProductsShowByList: boolean
+}

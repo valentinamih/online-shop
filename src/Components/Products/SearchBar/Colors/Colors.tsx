@@ -7,7 +7,7 @@ import {setColor} from "../../../../redux/searchSlice"
 import classNames from "classnames/bind"
 import {useGetColorsQuery} from "../../../../api/apiSlice"
 
-let cx = classNames.bind(style);
+let cx = classNames.bind(style)
 
 export const Colors: React.FunctionComponent<PropsType> = (props) => {
     const {data} = useGetColorsQuery()

@@ -1,4 +1,4 @@
-import {RootReducerType} from "../store";
+import {RootReducerType} from "../store"
 
 export const cartSelector = {
     cartItems: (store: RootReducerType) => {

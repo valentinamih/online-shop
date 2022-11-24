@@ -1,12 +1,12 @@
-import {createSlice} from "@reduxjs/toolkit";
-import {ColorType} from "../types/types";
-import {filterProductsRequestType} from "../types/types";
+import {createSlice} from "@reduxjs/toolkit"
+import {ColorType} from "../types/types"
+import {filterProductsRequestType} from "../types/types"
 
 type InitialStateType = {
     productsFilter: filterProductsRequestType
-    colors: Array<ColorType>;
-    isProductsShowByList: boolean;
-};
+    colors: Array<ColorType>
+    isProductsShowByList: boolean
+}
 const initialState: InitialStateType = {
     productsFilter: {
         categoryCode: null,
@@ -19,7 +19,7 @@ const initialState: InitialStateType = {
     },
     colors: [] as Array<ColorType>,
     isProductsShowByList: false,
-};
+}
 
 const searchSlice = createSlice({
     name: "search",
@@ -47,9 +47,9 @@ const searchSlice = createSlice({
             state.productsFilter.pageSize = action.payload
         }
     },
-});
+})
 
-export default searchSlice.reducer;
+export default searchSlice.reducer
 export const {
     setColor,
     setMaxPrice,
@@ -58,4 +58,4 @@ export const {
     toggleShowByList,
     setPageSize,
     setPageNumber
-} = searchSlice.actions;
+} = searchSlice.actions

@@ -1,9 +1,9 @@
-import style from "./Sidebar.module.css";
-import React from "react";
-import {Navigation} from "../Navigation/Navigation";
-import {Contacts} from "./Contacts/Contacts";
-import SidebarNavigationStyle from "./SidebarNavigation.module.css";
-import {Button} from "../common/Button/Button";
+import style from "./Sidebar.module.css"
+import React from "react"
+import {Navigation} from "../Navigation/Navigation"
+import {Contacts} from "./Contacts/Contacts"
+import SidebarNavigationStyle from "./SidebarNavigation.module.css"
+import {Button} from "../common/Button/Button"
 
 
 export const Sidebar: React.FunctionComponent = () => {
@@ -15,4 +15,4 @@ export const Sidebar: React.FunctionComponent = () => {
         }}/>
         <Contacts/>
     </div>
-};
+}

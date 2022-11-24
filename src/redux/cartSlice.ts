@@ -1,39 +1,39 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { CartItem } from "../types/types";
+import {createSlice} from "@reduxjs/toolkit"
+import {CartItem} from "../types/types"
 
 type InitialStateType = {
-  isSubscribed: boolean;
-  cart: Array<CartItem>;
-  totalAmount: number
-};
+    isSubscribed: boolean
+    cart: Array<CartItem>
+    totalAmount: number
+}
 
 let initialState: InitialStateType = {
-  isSubscribed: false,
-  cart: [],
-  totalAmount: 0
-};
+    isSubscribed: false,
+    cart: [],
+    totalAmount: 0
+}
 
 const cartSlice = createSlice({
-  name: "cart",
-  initialState: initialState,
-  reducers: {
-    setSubscribe(state: InitialStateType) {
-      state.isSubscribed = true;
+    name: "cart",
+    initialState: initialState,
+    reducers: {
+        setSubscribe(state: InitialStateType) {
+            state.isSubscribed = true
+        },
+        addItemToCard(state: InitialStateType, action) {
+            let isAdded = false
+            for (let i = 0; i < state.cart.length; i++) {
+                if (state.cart[i].product.id === action.payload.product.id) {
+                    state.cart[i].count = action.payload.count
+                    isAdded = true
+                }
+            }
+            if (!isAdded) {
+                state.cart.push(action.payload)
+            }
+        },
     },
-    addItemToCard(state: InitialStateType, action) {
-      let isAdded = false;
-      for (let i = 0; i < state.cart.length; i++) {
-        if (state.cart[i].product.id === action.payload.product.id) {
-          state.cart[i].count = action.payload.count;
-          isAdded = true;
-        }
-      }
-      if (!isAdded) {
-        state.cart.push(action.payload);
-      }
-    },
-  },
-});
+})
 
-export default cartSlice.reducer;
-export const { setSubscribe, addItemToCard } = cartSlice.actions;
+export default cartSlice.reducer
+export const {setSubscribe, addItemToCard} = cartSlice.actions

@@ -1,0 +1,8 @@
+.loader {
+  width: 200px;
+  height: 200px;
+  margin: 40vh auto;
+  background: url("./../../../assets/loader.gif");
+}
+
+/*# sourceMappingURL=Loader.module.css.map */

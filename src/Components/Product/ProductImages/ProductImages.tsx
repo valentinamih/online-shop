@@ -1,9 +1,9 @@
-import React from "react";
-import {Carousel} from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import style from "./ProductImages.module.css";
-import {ImageType, ProductType} from "../../../types/types";
-import {baseImagesUrl} from "../../../api/products-api";
+import React from "react"
+import {Carousel} from "react-responsive-carousel"
+import "react-responsive-carousel/lib/styles/carousel.min.css"
+import style from "./ProductImages.module.css"
+import {ImageType, ProductType} from "../../../types/types"
+import {baseImagesUrl} from "../../../api/products-api"
 
 export const ProductImages: React.FunctionComponent<PropsType> = (props) => {
     return <Carousel
@@ -20,9 +20,9 @@ export const ProductImages: React.FunctionComponent<PropsType> = (props) => {
                 className={style.cardImage}/>
         })}
     </Carousel>
-};
+}
 
 interface PropsType {
     product: ProductType
     id: number
-};
+}

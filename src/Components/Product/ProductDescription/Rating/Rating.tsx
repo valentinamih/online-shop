@@ -1,9 +1,8 @@
-import React from "react";
-import style from "./Rating.module.css";
+import React from "react"
+import style from "./Rating.module.css"
 
 export const Rating: React.FunctionComponent = () => {
-    return (
-        <div className={style.ratingArea}>
+    return <div className={style.ratingArea}>
             <input type="radio" id="star-5" name="rating" value="5"/>
             <label htmlFor="star-5" title="5">
                 {" "}
@@ -25,5 +24,4 @@ export const Rating: React.FunctionComponent = () => {
                 {" "}
             </label>
         </div>
-    );
-};
+}

@@ -46,7 +46,6 @@ export const Price: React.FunctionComponent<PropsType> = (props) => {
                 )}
                 renderThumb={({props, isDragged}) => (
                     <div {...props} className={style.dots}>
-
                     </div>
                 )}/>
             <output className={style.output}>

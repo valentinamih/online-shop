@@ -1,8 +1,8 @@
-import React from "react";
-import style from "./ProductListHeader.module.css";
-import {ShowToggler} from "./ShowToggler/ShowToggler";
-import {SortSelect} from "./SortSelect/SortSelect";
-import {PaginationSelect} from "./PaginationSelect/PaginationSelect";
+import React from "react"
+import style from "./ProductListHeader.module.css"
+import {ShowToggler} from "./ShowToggler/ShowToggler"
+import {SortSelect} from "./SortSelect/SortSelect"
+import {PaginationSelect} from "./PaginationSelect/PaginationSelect"
 
 export const ProductsListHeader: React.FunctionComponent<PropsType> = (props) => {
     return <div className={style.listHeaderContainer}>

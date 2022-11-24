@@ -1,13 +1,13 @@
-import {Field, Form, Formik, FormikHelpers} from "formik";
-import React from "react";
-import style from "./SubscribeForm.module.css";
-import {useDispatch} from "react-redux";
-import {setSubscribe} from "../../../redux/cartSlice";
-import {Button} from "../../common/Button/Button";
+import {Field, Form, Formik, FormikHelpers} from "formik"
+import React from "react"
+import style from "./SubscribeForm.module.css"
+import {useDispatch} from "react-redux"
+import {setSubscribe} from "../../../redux/cartSlice"
+import {Button} from "../../common/Button/Button"
 
 export const SubscribeForm: React.FunctionComponent = () => {
-    let dispatch = useDispatch();
-    return <div>
+    let dispatch = useDispatch()
+    return <>
         <Formik
             initialValues={{
                 email: "",
@@ -16,10 +16,9 @@ export const SubscribeForm: React.FunctionComponent = () => {
                 values: FormValues,
                 {setSubmitting}: FormikHelpers<FormValues>
             ) => {
-                console.log(values.email);
-                values.email = "";
-                setSubmitting(false);
-                dispatch(setSubscribe());
+                values.email = ""
+                setSubmitting(false)
+                dispatch(setSubscribe())
             }}>
             <Form className={style.subscribeFormInput}>
                 <Field
@@ -34,9 +33,9 @@ export const SubscribeForm: React.FunctionComponent = () => {
                     }}/>
             </Form>
         </Formik>
-    </div>
-};
+    </>
+}
 
 interface FormValues {
-    email: string;
-};
+    email: string
+}

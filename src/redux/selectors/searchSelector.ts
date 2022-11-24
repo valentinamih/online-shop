@@ -1,10 +1,10 @@
-import {RootReducerType} from "../store";
+import {RootReducerType} from "../store"
 
 export const searchSelector = {
   isProductsShowByList: (store: RootReducerType) => {
-    return store.searchReducer.isProductsShowByList;
+    return store.searchReducer.isProductsShowByList
   },
   productsFilter: (store: RootReducerType) => {
     return store.searchReducer.productsFilter
   }
-};
+}
